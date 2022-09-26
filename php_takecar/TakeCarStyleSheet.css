@@ -1,0 +1,126 @@
+﻿#navbar {
+    overflow: hidden;
+    background-color: rgba(140, 122, 134, 0.90);
+    border-radius: 7px;
+}
+
+    /* Navbar links */
+#navbar>a {
+        float: right;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        text-decoration: none;
+    }
+
+#navbar > a:hover {
+   background-color: rgba(98, 209, 192, 0.90)
+    }
+
+
+#navbar a {
+    padding: 15px
+}
+        /* Page content */
+.content {
+    padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .content {
+        padding-top: 60px;
+    }
+
+
+.home {
+    padding: 40px;
+    background-color: rgba(140, 122, 134, 0.90);
+    text-align: center;
+    border-radius: 10px;
+}
+
+h1 {
+    padding: 40px;
+    color: white
+}
+
+#content {
+    text-align: center;
+    background-image: url(oldcar-wpp.jpg);
+    background-position: center;
+    padding: 40px;
+    margin: 70px;
+    border-radius: 10px;
+}
+body {
+    background-image: url(bus-wpp.jpg);
+    background-size: cover;
+    font-family: "Verdana";
+}
+
+button {
+    background-color: #62d1c0;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input{
+    text-align: left;
+    margin-top: 4px;
+    border: none;
+    border-bottom: 2px solid #62d1c0;
+}
+
+select {
+    text-align: center;
+    margin-top: 4px;
+    border: none;
+    border-bottom: 2px solid #62d1c0;
+}
+
+.InscriptionPage {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(140, 122, 134, 0.95);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.ConnexionPage {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(140, 122, 134, 0.95);
+    text-align: center;
+    border-radius: 10px;
+}
+
+#overlay {
+    position: absolute;
+    top: 70px;
+    width: 95%;
+    height: 83%;
+    z-index: 1000;
+}
+
+
+.wrongpass{
+    border-bottom:4px solid red;
+}
+
+.notvalidButton {
+    background-color: rgba(51, 51, 51, 0.92);
+}
