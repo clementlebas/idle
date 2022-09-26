@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Une autre utilisation d'un bloc finally</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.5  (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="gayral ">
+	<META NAME="CHANGED" CONTENT="20160322;10362000">
+	<STYLE TYPE="text/css">
+	<!--
+		PRE.cjk { font-family: "Droid Sans", monospace }
+		TT.cjk { font-family: "Droid Sans", monospace }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="fr-FR" BGCOLOR="#eeeeee" DIR="LTR">
+<H1>Une autre utilisation d'un bloc <TT CLASS="western">finally</TT> 
+</H1>
+<P>Il s'agit de deviner ce que fait le programme suivant pour
+l'instruction : <BR>&nbsp; 
+</P>
+<DL>
+	<DD STYLE="margin-bottom: 0.5cm"><TT CLASS="western">java
+	UtiliseFinally 15 14 ha 12</TT> 
+	</DD></DL>
+<P>
+<A HREF="#reponse">Réponse</A> 
+</P>
+<PRE CLASS="western">
+<TT CLASS="western"><FONT COLOR="#006400"><B>class</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> UtiliseFinally</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">  </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>static int</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> moyenne(String[] liste)</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">  </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>int</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> somme=0,entier, nbNotes=0;</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">int i=0;</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>for</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> (i=0;i &lt; liste.length;i++) </FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">      </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">        </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>try</B></FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">          </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{         </FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">            </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">entier=Integer.parseInt(liste[i]);</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">            </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">somme+=entier;</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">            </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">nbNotes++;</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">          </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">        </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>finally</B></FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">          </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">            </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">System.out.println(&quot;donnee traitee : &quot;+liste[i]);</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">          </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">      </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>return</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> somme/nbNotes;</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">  </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT>
+
+<TT CLASS="western"><FONT COLOR="#006400">  </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>public static void</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> main(String[] argv)</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">  </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>try</B></FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">      </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">        </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">System.out. println(&quot;La moyenne est &quot;+moyenne(argv));</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">      </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">    </FONT></TT><TT CLASS="western"><FONT COLOR="#006400"><B>catch</B></FONT></TT><TT CLASS="western"><FONT COLOR="#006400"> (NumberFormatException e)  </FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">      </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">{</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">        </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">System.out.println(&quot;Erreur sur vos entiers&quot;);</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">      </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">} </FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">  </FONT></TT><TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#006400">}</FONT></TT></PRE><P>
+<A NAME="reponse"></A><TT CLASS="western">Pour : java UtiliseFinally
+15 14 ha 12 </TT>
+</P>
+<PRE CLASS="western"><TT CLASS="western"><FONT COLOR="#d2691e">donnee traitee : 15</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#d2691e">donnee traitee : 14</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#d2691e">donnee traitee : ha</FONT></TT>
+<TT CLASS="western"><FONT COLOR="#d2691e">Erreur sur vos entiers</FONT></TT></PRE><P>
+<BR><BR>
+</P>
+</BODY>
+</HTML>
